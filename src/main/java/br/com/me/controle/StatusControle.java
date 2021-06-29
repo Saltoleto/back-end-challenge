@@ -12,10 +12,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Arrays;
@@ -59,5 +56,12 @@ public class StatusControle {
         return RespostaUtil.resposta(statusPedidoDTO);
     }
 
+    @ApiOperation(value = "Endpoint para teste")
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Status atualizado com sucesso"),
+            @ApiResponse(code = 400, message = "Bad Request: Requisição possui campos inválidos")})
+    @GetMapping
+    public ResponseEntity<HttpStatus> teste() {
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 }
