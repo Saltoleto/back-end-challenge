@@ -55,6 +55,5 @@ public class StatusControle {
 
         return RespostaUtil.resposta(statusPedidoDTO);
     }
-    
 
 }
